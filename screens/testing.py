@@ -5,6 +5,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from screens.navigator import navigatorMenu
 from kivy.metrics import dp,sp
+from screens.config.constants import Constants
 
 
 class Testing(Screen):
@@ -16,7 +17,7 @@ class Testing(Screen):
         blTestingStatistic=BoxLayout(orientation="horizontal")
         
         lblTitle = Label(text="Тестирование", color="yellow")
-        lblTitle.font_size = sp(30)
+        lblTitle.font_size = Constants.HEADER_HEIGHT*0.5
         blTestingTitle.add_widget(lblTitle)
 
         blTestingMain.add_widget(blTestingTitle)

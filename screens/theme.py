@@ -6,6 +6,7 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from screens.setting import Setting
 from screens.navigator import navigatorMenu
 from kivy.metrics import dp, sp
+from screens.config.constants import Constants
 
 
 class Theme(Screen):
@@ -14,19 +15,20 @@ class Theme(Screen):
 
         blThemeMain=BoxLayout(orientation="vertical")
         blThemeTitle=BoxLayout(orientation="horizontal")
+        blThemeTitle.size_hint_y=None
+        blThemeTitle.height=Constants.HEADER_HEIGHT*0.5
         blThemeSelect=BoxLayout(orientation="vertical")
         
-        lblTitle = Label(text="Выбор темы контрольных заданий", color="yellow",font_size=sp(30))
+        lblTitle = Label(text="Выбор темы контрольных заданий", color="yellow",font_size=Constants.HEADER_HEIGHT*0.5)
         #lblTitle.size_hint=(None,None)
         #lblTitle.font_size=30
         blThemeTitle.add_widget(lblTitle)
 
-        btnThemeElect = Button(text="Электробезопастность",size_hint=(None,None),size=(dp(400),dp(50)))
-
+        btnThemeElect = Button(text="Электробезопастность",size_hint=(None,None),size=(Constants.BUTTON_WIDTH,Constants.BUTTON_HEIGHT))
         btnThemeElect.id="electr"
         btnThemeElect.bind(on_releas=self.btnThemeSelect_click)
 
-        btnThemeProm = Button(text="Промбезопастность",size_hint=(None,None),size=(dp(400),dp(50)))
+        btnThemeProm = Button(text="Промбезопастность",size_hint=(None,None),size=(Constants.BUTTON_WIDTH,Constants.BUTTON_HEIGHT))
         btnThemeProm.id="Prombez"
         btnThemeProm.bind(on_releas=self.btnThemeSelect_click)
 
@@ -40,10 +42,6 @@ class Theme(Screen):
         blThemeMain.add_widget(navigatorMenu(self.change_screen))
        
         self.add_widget(blThemeMain)
-
-    def btn_click(self, instance):  
-        #print(self.manager.current)
-        self.manager.current = "setting"
 
 
     def btnThemeSelect_click(self, instance):

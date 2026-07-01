@@ -13,10 +13,13 @@ from kivy.core.window import Window
 from kivy.utils import platform
 
 
+
 if platform in ("win", "linux"):
     Window.minimum_width = 1000
     Window.minimum_height = 600
-    Window.resizeble=True 
+    Window.resizeble=True
+
+
 
 class MyApp(App):
     

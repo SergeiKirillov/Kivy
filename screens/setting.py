@@ -5,6 +5,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from screens.navigator import navigatorMenu
 from kivy.metrics import dp, sp
+from screens.config.constants import Constants
 
 
 class Setting(Screen):
@@ -15,7 +16,7 @@ class Setting(Screen):
         blSettingSelect=BoxLayout(orientation="vertical")
         
         lblTitle=Label(text="Экрон настроек", color="yellow")
-        lblTitle.font_size=sp(32)
+        lblTitle.font_size=Constants.HEADER_HEIGHT
         lblTitle.color="red"
         #btnMenu = Button(text="Назад в Меню",size_hint=(None, None),size=(200,20))
         blSettingSelect.add_widget(lblTitle)

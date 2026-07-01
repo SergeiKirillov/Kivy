@@ -5,6 +5,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from screens.navigator import navigatorMenu
 from kivy.metrics import dp,sp
+from screens.config.constants import Constants
 
 
 class Statictic(Screen):
@@ -15,7 +16,7 @@ class Statictic(Screen):
         blStatisticSelect=BoxLayout(orientation="vertical")
         
         lblStatisticTitle=Label(text="Экрон статистик", color="yellow")
-        lblStatisticTitle.font_size=sp(32)
+        lblStatisticTitle.font_size=Constants.HEADER_HEIGHT*0.5
         blStatisticSelect.add_widget(lblStatisticTitle) 
         
         blStatisticMain.add_widget(blStatisticSelect)
