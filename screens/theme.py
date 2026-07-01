@@ -5,6 +5,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from screens.setting import Setting
 from screens.navigator import navigatorMenu
+from kivy.metrics import dp, sp
 
 
 class Theme(Screen):
@@ -15,17 +16,17 @@ class Theme(Screen):
         blThemeTitle=BoxLayout(orientation="horizontal")
         blThemeSelect=BoxLayout(orientation="vertical")
         
-        lblTitle = Label(text="Выбор темы контрольных заданий", color="yellow",font_size="30")
+        lblTitle = Label(text="Выбор темы контрольных заданий", color="yellow",font_size=sp(30))
         #lblTitle.size_hint=(None,None)
         #lblTitle.font_size=30
         blThemeTitle.add_widget(lblTitle)
 
-        btnThemeElect = Button(text="Электробезопастность",size_hint=(None,None),size=(400,50))
+        btnThemeElect = Button(text="Электробезопастность",size_hint=(None,None),size=(dp(400),dp(50)))
 
         btnThemeElect.id="electr"
         btnThemeElect.bind(on_releas=self.btnThemeSelect_click)
 
-        btnThemeProm = Button(text="Промбезопастность",size_hint=(None,None),size=(400,50))
+        btnThemeProm = Button(text="Промбезопастность",size_hint=(None,None),size=(dp(400),dp(50)))
         btnThemeProm.id="Prombez"
         btnThemeProm.bind(on_releas=self.btnThemeSelect_click)
 

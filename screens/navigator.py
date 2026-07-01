@@ -3,51 +3,54 @@ from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.metrics import dp,sp
 
 class navigatorMenu(BoxLayout):
     def __init__(self, callback, **kwargs):
         super().__init__(**kwargs)
         self.orientation="horizontal"
         self.size_hint_y=None
-        self.height=50
+        self.height=dp(50)
 
         #btnMain=Button(text="Главный экран",size_hint_x=None,width=110)
         btnMain=Button(text="Главный экран")
-        btnMain.size=(btnMain.texture_size[0]+20,50)
+        btnMain.size=(btnMain.texture_size[0]+20,dp(50))
         btnMain.texture_update()
         btnMain.bind(on_press=lambda x: callback("main"))
 
         #btnSelectTheme=Button(text="Выбор темы",size_hint_x=None,width=110)
         btnSelectTheme=Button(text="Выбор темы")
-        btnSelectTheme.size=(btnMain.texture_size[0]+20,50)
+        btnSelectTheme.size=(btnMain.texture_size[0]+20,dp(50))
         btnSelectTheme.texture_update()
         btnSelectTheme.bind(on_press=lambda x: callback("theme"))
 
         #btnTest=Button(text="Тестирование",size_hint_x=None,width=110)
-        btnTest=Button(text="Тестирование",size_hint_x=None,width=110)
-        btnTest.size=(btnMain.texture_size[0]+20,50)
+        btnTest=Button(text="Тестирование")
+        btnTest.size=(btnMain.texture_size[0]+20,dp(50))
         btnTest.texture_update()
         btnTest.bind(on_press=lambda x: callback("testing"))
 
         #@btnExam=Button(text="Экзаменирование",size_hint_x=None,width=110)
         btnExam=Button(text="Экзаменирование")
-        btnExam.size=(btnMain.texture_size[0]+20,50)
+        btnExam.size=(btnMain.texture_size[0]+20,dp(50))
         btnExam.texture_update()    
+        btnExam.bind(on_press=lambda x: callback("exsam"))
 
         #btnStat=Button(text="Статистика",size_hint_x=None,width=110)
         btnStat=Button(text="Статистика")
-        btnStat.size=(btnMain.texture_size[0]+20,50)
+        btnStat.size=(btnMain.texture_size[0]+20,dp(50))
         btnStat.texture_update()
+        btnStat.bind(on_press=lambda x: callback("statictic"))
 
         #btnSetting=Button(text="Настройка",size_hint_x=None,width=110)
         btnSetting=Button(text="Настройка")
-        btnSetting.size=(btnMain.texture_size[0]+20,50)
+        btnSetting.size=(btnMain.texture_size[0]+20,dp(50))
         btnSetting.texture_update()
         btnSetting.bind(on_press=lambda x: callback("setting"))
 
         #btnExit=Button(text="Выход",size_hint_x=None,width=110)
         btnExit=Button(text="Выход")
-        btnExit.size=(btnMain.texture_size[0]+20,50)
+        btnExit.size=(btnMain.texture_size[0]+20,dp(50))
         btnExit.texture_update()
         btnExit.bind(on_press=lambda x: callback("exit"))
 

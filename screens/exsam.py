@@ -7,7 +7,7 @@ from screens.navigator import navigatorMenu
 from kivy.metrics import dp,sp
 
 
-class Testing(Screen):
+class Exsam(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         blTestingMain=BoxLayout(orientation="vertical")
@@ -15,7 +15,7 @@ class Testing(Screen):
         blTestingQuestion=BoxLayout(orientation="vertical")
         blTestingStatistic=BoxLayout(orientation="horizontal")
         
-        lblTitle = Label(text="Тестирование", color="yellow")
+        lblTitle = Label(text="Экзамен", color="white")
         lblTitle.font_size = sp(30)
         blTestingTitle.add_widget(lblTitle)
 

@@ -6,14 +6,15 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from screens.setting import Setting
 from screens.theme import Theme
 from screens.navigator import navigatorMenu
+from kivy.metrics import dp, sp
 
 class MainScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         blMain = BoxLayout(orientation="vertical")
 
-        lblTitle=Label(text="Главный экрон", color="yellow")
-        lblTitle.font_size=28
+        lblTitle=Label(text="Главный экрaн", color="yellow")
+        lblTitle.font_size=sp(30)
 
         #btnTheme=Button(text="Выбор темы заданий",size_hint=(None, None),size=(200,20))
         #btnTheme.id="btn_select_theme"

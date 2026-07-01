@@ -7,8 +7,11 @@ from screens.setting import Setting
 from screens.theme import Theme
 from screens.mainScreen import MainScreen
 from screens.testing import Testing
+from screens.statictica import Statictic
+from screens.exsam import Exsam
 from kivy.core.window import Window
 from kivy.utils import platform
+
 
 if platform in ("win", "linux"):
     Window.minimum_width = 1000
@@ -24,6 +27,8 @@ class MyApp(App):
         sc.add_widget(Theme(name="theme"))
         sc.add_widget(Setting(name="setting"))
         sc.add_widget(Testing(name="testing"))
+        sc.add_widget(Exsam(name="exsam"))
+        sc.add_widget(Statictic(name="statictic"))
     
         return sc
     

@@ -4,6 +4,7 @@ from kivy.uix.label import Label
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from screens.navigator import navigatorMenu
+from kivy.metrics import dp,sp
 
 
 class Statictic(Screen):
@@ -13,13 +14,19 @@ class Statictic(Screen):
         blStatisticMain=BoxLayout(orientation="vertical")
         blStatisticSelect=BoxLayout(orientation="vertical")
         
-        lblStatisticTitle=Label(text="Экрон статистик", color="yellow") 
-        btnStatisticMenu = Button(text="Назад в Меню",size_hint=(None, None),size=(200,20))
-        blStatisticSelect.add_widget(lblStatisticTitle)
-        blStatisticSelect.add_widget(btnStatisticMenu)
+        lblStatisticTitle=Label(text="Экрон статистик", color="yellow")
+        lblStatisticTitle.font_size=sp(32)
+        blStatisticSelect.add_widget(lblStatisticTitle) 
         
         blStatisticMain.add_widget(blStatisticSelect)
-        blStatisticMain.add_widget(navigatorMenu())
-
+        blStatisticMain.add_widget(navigatorMenu(self.change_screen))
         
         self.add_widget(blStatisticMain)
+
+    def change_screen(self, screen):
+        if screen=="exit":
+            App.get_running_app().stop()
+        else:
+            self.manager.current=screen    
+
+            
