@@ -5,7 +5,7 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.screenmanager import ScreenManager, Screen
 from screens.setting import Setting
 from screens.navigator import navigatorMenu
-from kivy.metrics import dp, sp
+from kivy.uix.widget import Widget
 from screens.config.constants import Constants
 
 
@@ -32,13 +32,18 @@ class Theme(Screen):
         btnThemeProm.id="Prombez"
         btnThemeProm.bind(on_releas=self.btnThemeSelect_click)
 
-        #blThemeSelect.add_widget()
+        
+        blThemeSelect.add_widget(Widget())
         blThemeSelect.add_widget(btnThemeElect)
         blThemeSelect.add_widget(btnThemeProm)
-
+        blThemeSelect.add_widget(Widget())
+        blThemeSelectWindows=BoxLayout(orientation="horizontal")
+        blThemeSelectWindows.add_widget(Widget())
+        blThemeSelectWindows.add_widget(blThemeSelect)
+        blThemeSelectWindows.add_widget(Widget())    
 
         blThemeMain.add_widget(blThemeTitle)
-        blThemeMain.add_widget(blThemeSelect)
+        blThemeMain.add_widget(blThemeSelectWindows)
         blThemeMain.add_widget(navigatorMenu(self.change_screen))
        
         self.add_widget(blThemeMain)

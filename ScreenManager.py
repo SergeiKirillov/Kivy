@@ -11,12 +11,13 @@ from screens.statictica import Statictic
 from screens.exsam import Exsam
 from kivy.core.window import Window
 from kivy.utils import platform
+from screens.config.constants import Constants
 
 
 
 if platform in ("win", "linux"):
-    Window.minimum_width = 1000
-    Window.minimum_height = 600
+    Window.minimum_width = Constants.WINDOW_MIN_WIDTH
+    Window.minimum_height = Constants.WINDOW_MIN_HEIGHT
     Window.resizeble=True
 
 
