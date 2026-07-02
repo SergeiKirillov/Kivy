@@ -20,7 +20,7 @@ if platform in ("win", "linux"):
     Window.minimum_height = Constants.WINDOW_MIN_HEIGHT
     Window.resizeble=True
 
-
+#TODO главное окно
 
 class MyApp(App):
     
