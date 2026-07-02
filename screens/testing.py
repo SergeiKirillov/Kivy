@@ -11,14 +11,16 @@ from screens.config.constants import Constants
 class Testing(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.test_name=""
+        self.data={}
         blTestingMain=BoxLayout(orientation="vertical")
         blTestingTitle=BoxLayout(orientation="horizontal")
         blTestingQuestion=BoxLayout(orientation="vertical")
         blTestingStatistic=BoxLayout(orientation="horizontal")
         
-        lblTitle = Label(text="Тестирование", color="yellow")
-        lblTitle.font_size = Constants.HEADER_HEIGHT*0.5
-        blTestingTitle.add_widget(lblTitle)
+        self.lblTitle = Label(text="Тестирование", color="yellow")
+        self.lblTitle.font_size = Constants.HEADER_HEIGHT*0.5
+        blTestingTitle.add_widget(self.lblTitle)
 
         blTestingMain.add_widget(blTestingTitle)
         blTestingMain.add_widget(blTestingQuestion)
@@ -31,3 +33,7 @@ class Testing(Screen):
             App.get_running_app().stop()
         else:
             self.manager.current=screen
+
+    def on_enter(self):   #событие при открывании экрана,интерфейс ещё старый
+        #self.lblTitle.text=self.test_name #Изменяем значение текстового поля.
+        self.lblTitle.text=self.data["topic"]

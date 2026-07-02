@@ -26,11 +26,11 @@ class Theme(Screen):
 
         btnThemeElect = Button(text="Электробезопастность",size_hint=(None,None),size=(Constants.BUTTON_WIDTH,Constants.BUTTON_HEIGHT))
         btnThemeElect.id="electr"
-        btnThemeElect.bind(on_releas=self.btnThemeSelect_click)
+        btnThemeElect.bind(on_release=self.btnThemeSelect_click)
 
         btnThemeProm = Button(text="Промбезопастность",size_hint=(None,None),size=(Constants.BUTTON_WIDTH,Constants.BUTTON_HEIGHT))
         btnThemeProm.id="Prombez"
-        btnThemeProm.bind(on_releas=self.btnThemeSelect_click)
+        btnThemeProm.bind(on_release=self.btnThemeSelect_click)
 
         
         blThemeSelect.add_widget(Widget())
@@ -50,7 +50,11 @@ class Theme(Screen):
 
 
     def btnThemeSelect_click(self, instance):
-        pass
+
+        screen=self.manager.get_screen("testing") #Получаем доступ к экрану
+        screen.test_name="Электробезопастность"   #Присваиваем переменной этого экрана значение 
+        screen.data={"topic":"Электробезопастность","questions":10,"user":"019261"}
+        self.manager.current="testing"            #Отображаем экран    
 
     def change_screen(self, screen):
         if screen=="exit":
